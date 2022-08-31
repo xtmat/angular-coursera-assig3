@@ -1,0 +1,20 @@
+<table class="table table-striped table-bordered table-hover table-sm rounded">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col" class="text-center">Name</th>
+			<th scope="col" class="text-center">Short Name</th>
+			<th scope="col" class="text-center">Description</th>
+            <th scope="col" class="text-center">Remove?</th>
+		</tr>
+	</thead>
+	<tbody>
+    	<tr ng-repeat="item in $ctrl.foundItems">
+			<th class="text-center" scope="row">{{item.name}}</th>
+			<td class="text-center">{{item.short_name}}</td>
+			<td class="text-center">{{item.description}}</td>
+			<td class="text-center"><input type="button"
+                class="btn btn-lg btn-primary" value="Don't want this one!"
+                ng-click="$ctrl.onRemove({index:$index})"></td>
+		</tr>
+	</tbody>
+</table>
